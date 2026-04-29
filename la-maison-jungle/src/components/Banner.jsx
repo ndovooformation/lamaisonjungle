@@ -3,8 +3,23 @@
  * Le composant Banner retourne un message codé en HTML <h1>Bienvenue à la maison</h1>
  */
 
+// J'importe le fichier Banner.css appliqué au composant Banner.jsx
+import styles from '../styles/Banner.module.css'
+// J'importe le logo
+import logo from '../assets/unsplash-logo.jpg'
+
+
 const Banner = () => {
-    return <h1>Bienvenue à la maison</h1>
+    const title = "Bienvenue à la maison"
+
+    return (
+        <div className={styles.banner}>
+            <img src={logo} alt="Logo de la maison" className={styles.logo}/>
+            <h1 className={styles.title}>{title}</h1>
+
+        </div>
+        
+    )
 }
 
 /**

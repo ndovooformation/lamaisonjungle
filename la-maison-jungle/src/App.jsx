@@ -7,12 +7,16 @@ import './App.css'
 // J'importe le composant Banner.jsx
 import Banner from './components/Banner'
 
+// J'importe le composant Cart.jsx
+import Cart from './components/Cart'
+
 function App() {
 
   return (
     <>
       
       <Banner />
+      <Cart /> 
     </>
   )
 }
