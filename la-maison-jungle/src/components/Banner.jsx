@@ -8,15 +8,20 @@ import styles from '../styles/Banner.module.css'
 // J'importe le logo
 import logo from '../assets/unsplash-logo.jpg'
 
-
-const Banner = () => {
-    const title = "Bienvenue à la maison"
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ * Le composant Bannr.jsx prend comme propos ses enfants déclarés dans le composant App.jsx
+ * J'utilise {children} pour faire appel aux props venant du coposant <Banner> <Banner> décalré dans le composant App.jsx
+ * Le composant Banner.jsx retourne un <div> qui contient les enfants {children}
+ */
+const Banner = ({children}) => {
 
     return (
         <div className={styles.banner}>
-            <img src={logo} alt="Logo de la maison" className={styles.logo}/>
-            <h1 className={styles.title}>{title}</h1>
-
+            {children}
+            
         </div>
         
     )
