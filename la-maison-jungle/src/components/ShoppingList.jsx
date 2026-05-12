@@ -2,9 +2,17 @@
  * ShoppingList est un composant qui contient la liste des courses
  */
 
+// J'importe le style ShopingList.module.css
 import styles from '../styles/ShopingList.module.css'
 
+// J'importe le composant CareScale.jsx
 import CareScale from './CareScale'
+
+// J'importe le composant PlantItem.jsx
+import PlantItem from './PlantItem'
+
+// J'importe l'image montsera
+import montsera from '../assets/montsera-unsplash.jpg'
 
 // Je crée une liste de fleurs. Par la suite, j'utiliserai la liste pour renvoyer des fleurs depuis le composant ShoppingList.
 const plantList = [
@@ -15,7 +23,8 @@ const plantList = [
         isBestSale: true,
         isSpecialOffer : true,
         water : 1,
-        light: 5
+        light: 5,
+        cover: montsera
     },
     {
         name: 'ficus lyarata',
@@ -24,7 +33,8 @@ const plantList = [
         isBestSale: false,
         isSpecialOffer : false,
         water: 2,
-        light: 6
+        light: 6,
+        cover: montsera
     },
     {
         name: 'pothos argenté',
@@ -33,7 +43,8 @@ const plantList = [
         isBestSale: false,
         isSpecialOffer : false, 
         water: 3,
-        light: 4
+        light: 4,
+        cover: montsera
     },
     {
         name: 'yucco',
@@ -42,7 +53,8 @@ const plantList = [
         isBestSale: true, 
         isSpecialOffer : true,
         water: 1,
-        light: 5
+        light: 5,
+        cover: montsera
     }, 
     {
         name: 'palmier',
@@ -51,7 +63,8 @@ const plantList = [
         isBestSale: false,
         isSpecialOffer : false, 
         water: 2,
-        light: 3
+        light: 3,
+        cover: montsera
     }
 ];
 
@@ -59,24 +72,29 @@ const plantList = [
 // je crée mon composant ShoppingList qui renvoie une liste d'achats
 const ShoppingList = () => {
     return ( /** */
-        <ul className={styles.lmjPlantList}>
+        <div>
+            <ul className={styles.lmjPlantList}>
             {
-                plantList.map((plant) => (
+                plantList.map(({id, name, cover, water, light}) => (
                     /** */
-                    <li key={plant.id} className={styles.lmjPlantItem}>
-                        {plant.isBestSale ? <span>❤️ </span> : <span>👹 </span>}
-                        {plant.name}
-                        {plant.isSpecialOffer ? <span className={styles.lmjSales}>solde</span> : <span></span>}
+                    <PlantItem 
+                        key={id}
+                        id={id}
+                        name={name}
+                        cover={cover}
+                        water={water}
+                        light={light}
+                    
+                    />
 
-                        <CareScale careType="light" scaleValue={plant.light}></CareScale>
-                        <CareScale careType="water" scaleValue={plant.water}></CareScale>
-                    </li>
                 )
                     
             )
             }
             
         </ul>
+        </div>
+        
     )
 }
 

@@ -10,12 +10,15 @@ import Banner from './components/Banner'
 // J'importe le composant Cart.jsx
 import Cart from './components/Cart'
 import ShoppingList from './components/ShoppingList'
+import QuestionForm from './components/QuestionForm'
+import Footer from './components/Footer'
 
 // J'importe le logo
 import logo from './assets/unsplash-logo.jpg'
 
 // J'importe le fichier Banner.css appliqué au composant Banner.jsx
 import styles from './styles/Banner.module.css'
+
 
 function App() {
   const title = "Bienvenue à la maison"
@@ -34,6 +37,10 @@ function App() {
       </Banner>
       <Cart />
       <ShoppingList />
+
+      <QuestionForm />
+
+      <Footer />
 
     </>
   )

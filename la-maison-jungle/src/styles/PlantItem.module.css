@@ -1,0 +1,21 @@
+/***
+Le style pour le copostant PlantItem.jsx
+
+**/
+
+/* Style pour chaque plante */
+.lmjPlantItem {
+    margin: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+/* style pour l'image de la plante*/
+.lmjPlantItemCover {
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+}
